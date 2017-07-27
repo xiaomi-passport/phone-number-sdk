@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../phoneSdk/phoneSdk.iml" filepath="$PROJECT_DIR$/../phoneSdk/phoneSdk.iml" />
+      <module fileurl="file://$PROJECT_DIR$/phonesdkdemo.iml" filepath="$PROJECT_DIR$/phonesdkdemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../project.iml" filepath="$PROJECT_DIR$/../project.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../app/simActivate.iml" filepath="$PROJECT_DIR$/../app/simActivate.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../simActivateDemo/simActivateDemo.iml" filepath="$PROJECT_DIR$/../simActivateDemo/simActivateDemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../simActivateSdk/simActivateSdk.iml" filepath="$PROJECT_DIR$/../simActivateSdk/simActivateSdk.iml" />
+    </modules>
+  </component>
+</project>
