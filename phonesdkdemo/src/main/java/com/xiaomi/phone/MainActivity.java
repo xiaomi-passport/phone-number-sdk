@@ -21,13 +21,15 @@ public class MainActivity extends Activity implements View.OnClickListener, MpHe
     private static final String TAG = "XiaomiPhoneSdkDemo";
 
     private MpHelper mpHelper;
+    private boolean setUpFlag = false;
 
     // 前往 dev.mi.com 申请, 替换
-    private static String clientId = "xxx";
+    private static String clientId = "2882303761517597158";
 
     // 前往 dev.mi.com 申请, 替换. 请妥善保存这个公钥，不要泄露，尽量不要放在客户端，最好在服务端完成解密
-    private static String publicKeyStr = "xxx";
-
+    private static String publicKeyStr = "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCIf3D4IvT53RqEAh7DaKZ2PE+XUSvDBxExORpt\n" +
+            "+1S8KcCPna7YBdBcBok8mWjnMntfWlLgsoPExrkNgg3zXjt9VPrpfCdQbrTcWSn11nHhmeHOSL8v\n" +
+            "RG2vNej8du7IXFVJIJJKJl4mj4GCWNG+YEvYfOxPbM5jqrCWJPBccc/geQIDAQAB\n";
     private RSAUtils mRSAUtils;
 
     @Override
@@ -45,8 +47,8 @@ public class MainActivity extends Activity implements View.OnClickListener, MpHe
     }
 
     @Override
-    protected void onResume() {
-        super.onResume();
+    protected void onStart() {
+        super.onStart();
         // 初始化帮助类，setup 的回调是 onSetupFinished
         mpHelper = new MpHelper(this, clientId);
         mpHelper.setUp(this);
@@ -56,14 +58,17 @@ public class MainActivity extends Activity implements View.OnClickListener, MpHe
     }
 
     @Override
-    protected void onPause() {
-        super.onPause();
+    protected void onStop() {
+        super.onStop();
         // 使用完记得dispose，防止内存泄露
         mpHelper.dispose();
     }
 
     @Override
     public void onClick(View v) {
+        if (!setUpFlag) {
+            return;
+        }
         switch (v.getId()) {
             case R.id.verify:
                 EditText et = (EditText) findViewById(R.id.phone);
@@ -79,6 +84,10 @@ public class MainActivity extends Activity implements View.OnClickListener, MpHe
 
     @Override
     public void onSetupFinished(MpResult mpResult) {
+        if (mpResult.isFailure()) {
+            showDialogText("setUp failed " + mpResult.getMessage());
+        }
+        setUpFlag = true;
         Log.v(TAG, mpResult.toString());
     }
 

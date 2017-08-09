@@ -65,7 +65,7 @@ public class MpHelper {
 
             @Override
             public void onServiceDisconnected(ComponentName componentName) {
-
+                mService = null;
             }
         };
         context.bindService(intent, mServiceConn, Context.BIND_AUTO_CREATE);
@@ -81,14 +81,14 @@ public class MpHelper {
 
     /**
      *
-     * @param traceId 一段字符串，用来追踪一次请求，会在加密结果中原样返回
+     * @param trace 一段字符串，用来追踪一次请求，会在加密结果中原样返回
      * */
-    public int getPhone(Activity act, String traceId) throws RemoteException, IntentSender.SendIntentException {
+    public int getPhone(Activity act, String trace) throws RemoteException, IntentSender.SendIntentException {
         checkSetUp();
         if (getPhoneListener == null) {
             throw new IllegalStateException("getPhoneListener has not been set yet");
         }
-        Bundle bundle = mService.getPhoneIntent(1, mClientId, traceId);
+        Bundle bundle = mService.getPhone(1, mClientId, trace, null);
         int code = bundle.getInt(RESPONSE_CODE);
         PendingIntent pendingIntent = bundle.getParcelable(RESPONSE_RESULT);
         if (code == Error.OK.code && pendingIntent != null) {
@@ -100,15 +100,15 @@ public class MpHelper {
 
     /**
      *
-     * @param traceId 一段字符串，用来追踪一次请求，会在加密结果中原样返回
+     * @param trace 一段字符串，用来追踪一次请求，会在加密结果中原样返回
      * @param phoneToVerify 需要对比的手机号
      * */
-    public int verifyPhone(Activity act, String traceId, String phoneToVerify) throws RemoteException, IntentSender.SendIntentException {
+    public int verifyPhone(Activity act, String trace, String phoneToVerify) throws RemoteException, IntentSender.SendIntentException {
         checkSetUp();
         if (verifyPhoneListener == null) {
             throw new IllegalStateException("verifyPhoneListener has not been set yet");
         }
-        Bundle bundle = mService.verifyPhoneIntent(1, mClientId, traceId, phoneToVerify);
+        Bundle bundle = mService.verifyPhone(1, mClientId, trace, phoneToVerify, null);
         int code = bundle.getInt(RESPONSE_CODE);
         PendingIntent pendingIntent = bundle.getParcelable(RESPONSE_RESULT);
         if (code == Error.OK.code && pendingIntent != null) {

@@ -3,17 +3,12 @@ package com.xiaomi.phone;
 public enum Error {
     UNKNOW(-1),
     OK(0),
-    UNACTIVATED(1),
-    DEV_ROOTED(2),
-    PARAM_INVALID(3),
-    NO_TE(4),
-    TE_SIGN_FAILED(5),
-    NOT_IN_SERVICE(6),
-    INTERRUPTED(7),
-    LOCAL_NOT_MATCH(8),
-    NO_PERMISSION(9),
-    NOT_SUPPORTED(10),
-    CANCELED(11);
+    PARAM_INVALID(1),
+    NO_PERMISSION(2),
+    NOT_SUPPORTED(3),
+    IO_EXCEPTION(4),
+    UNACTIVATEDSIM(5),
+    CANCELED(6);
 
     public final int code;
     Error(int code) {

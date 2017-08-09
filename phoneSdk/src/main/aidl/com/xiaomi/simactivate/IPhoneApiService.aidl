@@ -5,7 +5,6 @@ import android.os.Bundle;
 
 interface IPhoneApiService {
     int isSupported(int apiVersion, String clientId, String type);
-    Bundle isSimActivated(int apiVersion, String clientId);
-    Bundle verifyPhoneIntent(int apiVersion, String clientId, String trace, String phoneToVerify);
-    Bundle getPhoneIntent(int apiVersion, String clientId, String trace);
+    Bundle verifyPhone(int apiVersion, String clientId, String trace, String phoneToVerify, in Bundle options);
+    Bundle getPhone(int apiVersion, String clientId, String trace, in Bundle options);
 }
