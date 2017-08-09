@@ -4,11 +4,10 @@ public enum Error {
     UNKNOW(-1),
     OK(0),
     PARAM_INVALID(1),
-    NO_PERMISSION(2),
-    NOT_SUPPORTED(3),
-    IO_EXCEPTION(4),
-    UNACTIVATEDSIM(5),
-    CANCELED(6);
+    NOT_SUPPORTED(2),
+    IO_EXCEPTION(3),
+    UNACTIVATEDSIM(4),
+    CANCELED(5);
 
     public final int code;
     Error(int code) {

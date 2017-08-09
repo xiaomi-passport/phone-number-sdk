@@ -30,6 +30,13 @@ ext {
     buildToolsVersion = "25.0.0"
     minSdkVersion = 14
     targetSdkVersion = 23
+
+    platformKeyAlias = 'platformKey'
+    platformKeyPassword = 'android'
+    miuiPath = System.properties['MIUI_ROOT']
+    xiaomiAccountSDKPath = "$miuiPath/packages/apps/XiaomiAccountSdk"
+    platformStoreFile = new File(xiaomiAccountSDKPath, '.androidStudioProject/.keystore')
+    platformStorePassword = 'android'
 }
 
 ext.deps = [
