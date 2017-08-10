@@ -22,14 +22,4 @@ android {
 }
 
 dependencies {
-    testCompile deps.junit
-    testCompile deps.appcompat
-    testCompile deps.robolectric
-    testCompile deps.mockitocore
-    testCompile deps.testrunner
-    testCompile deps.testrules
-
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
-        exclude group: 'com.android.support', module: 'support-annotations'
-    })
 }

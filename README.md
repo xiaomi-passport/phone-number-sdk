@@ -1,9 +1,14 @@
 # XiaomiPhoneSdk
 
-这个 sdk 可以用来 对比/获取 小米手机上sim卡激活后的手机号
+这个 sdk 可以用来 对比/获取 小米手机上sim卡激活后的手机号, 支持最新的miui版本
 
 ## 准备
 在 dev.mi.com 注册申请成为开发者，接入应用，申请权限
+
+## 使用 demo
+
+使用申请的　clientId，publicKey　替换　demo　的　MainActivity　的值
+在　demo　的　build.gradle　中替换签名文件为你的签名文件
 
 ## 使用 sdk
 

@@ -30,37 +30,4 @@ ext {
     buildToolsVersion = "25.0.0"
     minSdkVersion = 14
     targetSdkVersion = 23
-
-    platformKeyAlias = 'platformKey'
-    platformKeyPassword = 'android'
-    miuiPath = System.properties['MIUI_ROOT']
-    xiaomiAccountSDKPath = "$miuiPath/packages/apps/XiaomiAccountSdk"
-    platformStoreFile = new File(xiaomiAccountSDKPath, '.androidStudioProject/.keystore')
-    platformStorePassword = 'android'
 }
-
-ext.deps = [
-        // Android
-        appcompat          : 'com.android.support:appcompat-v7:24.1.0',
-        supportdesign      : 'com.android.support:design:23.2.1',
-        supportannotation  : 'com.android.support:support-annotations:23.2.1',
-
-        // third party
-        okhttp             : 'com.squareup.okhttp3:okhttp:3.5.0',
-        gson               : 'com.google.code.gson:gson:2.3',
-
-        // test
-        junit              : 'junit:junit:4.12',
-        hamcrest           : 'org.hamcrest:hamcrest-library:1.3',                 // using this instead of java assertion
-        robolectric        : "org.robolectric:robolectric:3.0",
-        mockitocore        : 'org.mockito:mockito-core:1.10.19',
-        testrunner         : 'com.android.support.test:runner:0.4.1',
-        testrules          : 'com.android.support.test:rules:0.4.1',
-        powermockjunit4    : "org.powermock:powermock-module-junit4:1.6.2",
-        powermockjunit4rule: "org.powermock:powermock-module-junit4-rule:1.6.2",
-        powermockxstream   : "org.powermock:powermock-classloading-xstream:1.6.2",
-        powermockito       : "org.powermock:powermock-api-mockito:1.6.2",
-
-        restassured        : 'com.jayway.restassured:rest-assured:2.7.0',         // not able to fully use this due to conflicts on httpclient, use okhttp instead; but     use this for json handleing
-        mysqlconnector     : 'mysql:mysql-connector-java:5.1.37',                 // using this for db data handling
-]

@@ -25,23 +25,13 @@ android {
         debug {
             keyAlias "platformKey"
             keyPassword "android"
-            storeFile rootProject.ext.platformStoreFile
+            storeFile new File('../../.keystore') // 替换成你的签名
             storePassword "android"
         }
     }
 }
 
 dependencies {
-    compile deps.appcompat
+    compile 'com.android.support:appcompat-v7:24.1.0'
     compile project(':phoneSdk')
-    testCompile deps.junit
-    testCompile deps.appcompat
-    testCompile deps.robolectric
-    testCompile deps.mockitocore
-    testCompile deps.testrunner
-    testCompile deps.testrules
-
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
-        exclude group: 'com.android.support', module: 'support-annotations'
-    })
 }

@@ -24,12 +24,10 @@ public class MainActivity extends Activity implements View.OnClickListener, MpHe
     private boolean setUpFlag = false;
 
     // 前往 dev.mi.com 申请, 替换
-    private static String clientId = "2882303761517597158";
+    private static String clientId = "...";
 
     // 前往 dev.mi.com 申请, 替换. 请妥善保存这个公钥，不要泄露，尽量不要放在客户端，最好在服务端完成解密
-    private static String publicKeyStr = "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCIf3D4IvT53RqEAh7DaKZ2PE+XUSvDBxExORpt\n" +
-            "+1S8KcCPna7YBdBcBok8mWjnMntfWlLgsoPExrkNgg3zXjt9VPrpfCdQbrTcWSn11nHhmeHOSL8v\n" +
-            "RG2vNej8du7IXFVJIJJKJl4mj4GCWNG+YEvYfOxPbM5jqrCWJPBccc/geQIDAQAB\n";
+    private static String publicKeyStr = "...";
     private RSAUtils mRSAUtils;
 
     @Override
