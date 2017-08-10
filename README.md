@@ -7,8 +7,7 @@
 
 ## 使用 demo
 
-使用申请的　clientId，publicKey　替换　demo　的　MainActivity　的值
-在　demo　的　build.gradle　中替换签名文件为你的签名文件
+使用申请的 clientId，publicKey 替换 demo 的 MainActivity 的值, 在 demo 的 build.gradle 中替换签名文件为你的签名文件
 
 ## 使用 sdk
 
@@ -18,7 +17,7 @@
     <uses-permission android:name="com.xiaomi.simactivate.service.PERMISSION_PHONE" />
 ```
 
-## 获取手机号接口返回结果（getPhone）
+### 获取手机号接口返回结果（getPhone）
 + 成功
 
 ```json
@@ -69,7 +68,7 @@ resolve_result 中包含的是经过 AES 对称加密的结果信息，对称密
 }
 ```
 
-2. 验证手机号返回结果 （verifyPhone）
+### 验证手机号返回结果 （verifyPhone）
 + 成功
 
 ```json
