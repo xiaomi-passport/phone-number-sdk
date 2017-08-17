@@ -1,6 +1,6 @@
-# XiaomiPhoneSdk
+## xiaomi phone number relevant sdk
 
-这个 sdk 可以用来 对比/获取 小米手机上sim卡激活后的手机号, 支持最新的miui版本
+本 sdk 可以用来 对比/获取 小米手机上sim卡激活后的手机号, 支持最新的miui版本
 
 ## 准备
 在 dev.mi.com 注册申请成为开发者，接入应用，申请权限
@@ -14,7 +14,7 @@
 添加权限：
 
 ```xml
-    <uses-permission android:name="com.xiaomi.simactivate.service.PERMISSION_PHONE" />
+<uses-permission android:name="com.xiaomi.simactivate.service.PERMISSION_PHONE" />
 ```
 
 ### 获取手机号接口返回结果（getPhone）
