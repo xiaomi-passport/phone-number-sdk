@@ -13,16 +13,17 @@ import android.os.Bundle;
 import android.os.IBinder;
 import android.os.RemoteException;
 
+import com.xiaomi.simactivate.IXiaomiActivateService;
+
 import java.util.List;
 
-import com.xiaomi.simactivate.IPhoneApiService;
 
 import static android.app.Activity.RESULT_CANCELED;
 
 public class MpHelper {
     private Context context;
     private ServiceConnection mServiceConn;
-    private IPhoneApiService mService;
+    private IXiaomiActivateService mService;
 
     private VerifyPhoneListener verifyPhoneListener;
     private GetPhoneListener getPhoneListener;
@@ -58,7 +59,7 @@ public class MpHelper {
         mServiceConn = new ServiceConnection() {
             @Override
             public void onServiceConnected(ComponentName componentName, final IBinder iBinder) {
-                mService = IPhoneApiService.Stub.asInterface(iBinder);
+                mService = IXiaomiActivateService.Stub.asInterface(iBinder);
                 mSetupDone = true;
                 listener.onSetupFinished(new MpResult(Error.OK, null));
             }

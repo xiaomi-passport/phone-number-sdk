@@ -25,7 +25,7 @@ android {
         debug {
             keyAlias "platformKey"
             keyPassword "android"
-            storeFile new File('../../.keystore') // 替换成你的签名
+            storeFile new File('../.keystore') // 替换成你的签名
             storePassword "android"
         }
     }
